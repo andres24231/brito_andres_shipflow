@@ -102,17 +102,6 @@ Shipflow es un microservicio para la gestión de envíos de paquetes. Permite re
 5. **Consultar historial de un envío**
    - GET `http://localhost:8080/api/shipments/{trackingId}/history`
 
-## Criterios de evaluación (rúbrica)
-- Modelo de dominio correcto y completo
-- Flujo de creación validado y funcional
-- Consulta de envíos estructurada y completa
-- Cambio de estado con historial y reglas
-- Validaciones de negocio implementadas
-- Historial persistente y consultable
-- Código limpio y organizado
-- Documentación clara y completa
-- Entrega funcional y fácil de probar
 
----
 
 **Autor:** brito_andres_shipflow 
