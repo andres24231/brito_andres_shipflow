@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "Shipflow API",
+    "_postman_id": "brito-andres-shipflow-collection",
+    "description": "Colección para probar los endpoints principales de Shipflow",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Shipment",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"type\": \"box\",\n  \"description\": \"Books\",\n  \"weight\": 2.5,\n  \"originCity\": \"Quito\",\n  \"destinationCity\": \"Guayaquil\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/shipments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "shipments"]
+        }
+      }
+    },
+    {
+      "name": "Get All Shipments",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/shipments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "shipments"]
+        }
+      }
+    },
+    {
+      "name": "Get Shipment by TrackingId",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/shipments/{{trackingId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "shipments", "{{trackingId}}"]
+        }
+      }
+    },
+    {
+      "name": "Update Shipment Status",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"IN_TRANSIT\",\n  \"comment\": \"Package picked up\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/shipments/{{id}}/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "shipments", "{{id}}", "status"]
+        }
+      }
+    },
+    {
+      "name": "Get Shipment History",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/shipments/{{trackingId}}/history",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "shipments", "{{trackingId}}", "history"]
+        }
+      }
+    }
+  ]
+} 
